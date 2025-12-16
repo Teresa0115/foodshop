@@ -81,4 +81,224 @@
     .brand-card{
       border:1px solid var(--line);
       border-radius:var(--radius);
-      background:linear-gra
+      background:linear-gradient(180deg,#fff,#fbfbfb);
+      padding:14px;
+    }
+    .brand-img{
+      width:100%;
+      aspect-ratio: 16/11;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 30% 30%, #f3f3f3, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:14px;
+      overflow:hidden;
+    }
+    .tabs{
+      display:flex; gap:10px; margin:18px 0 10px;
+      border-bottom:1px solid var(--line);
+    }
+    .tab{
+      padding:10px 12px;
+      font-size:14px;
+      color:var(--muted);
+      border-bottom:2px solid transparent;
+      cursor:pointer;
+    }
+    .tab[aria-selected="true"]{
+      color:var(--text);
+      border-bottom-color:var(--text);
+      font-weight:600;
+    }
+    .panel{display:none; padding:16px 0 30px}
+    .panel.active{display:block}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      overflow:hidden;
+    }
+    .thumb{
+      width:100%;
+      aspect-ratio: 4/3;
+      background: #f6f6f6;
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .card .body{padding:12px}
+    .title{font-weight:600; margin:0 0 4px; font-size:15px}
+    .sub{margin:0; color:var(--muted); font-size:13px}
+    footer{
+      border-top:1px solid var(--line);
+      padding:22px 0 28px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .foot{
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:flex-start;
+    }
+    .foot a{color:var(--muted); text-decoration:underline}
+    @media (max-width: 900px){
+      .brand{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2, 1fr)}
+      .search input{width:110px}
+    }
+    @media (max-width: 520px){
+      .grid{grid-template-columns:1fr}
+      .nav{gap:8px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <nav class="nav" aria-label="主選單">
+          <a href="#">關於苗林</a>
+          <a href="#" aria-current="page">代理品牌</a>
+          <a href="#">精選商品</a>
+          <a href="#">主題特輯</a>
+          <a href="#">年度目錄</a>
+          <a href="#">聯絡我們</a>
+        </nav>
+
+        <div class="right">
+          <div class="lang" role="button" tabindex="0" aria-label="語言切換">
+            中文 · English · 日本語
+          </div>
+          <label class="search" aria-label="搜尋">
+            🔎 <input type="search" placeholder="搜尋" />
+          </label>
+          <a class="login" href="#" aria-label="登入">登入</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="crumb">關於苗林　/　代理品牌　/　精選商品</div>
+    </section>
+
+    <section class="brand">
+      <div>
+        <h1>O-MED</h1>
+
+        <!-- 改寫版品牌介紹（避免照抄原文） -->
+        <p class="desc">
+          O-MED 將對特級初榨橄欖油的熱愛，結合家族世代累積的經驗與傳統工藝。
+          他們把橄欖視為「水果」，橄欖油則像金黃的果汁——而果汁最關鍵的，就是「鮮度」。
+          因此在果實仍偏青綠、尚未完全熟成時即採收，並把摘果到榨油的流程壓縮在短時間內完成，
+          讓風味更細緻、香氣更清爽，入口也能感受到多酚帶來的微微辛辣感，呈現新鮮的特徵。
+        </p>
+
+        <div class="meta">
+          ※ 這是一份可自行編輯的品牌頁 HTML 模板，你可以把圖片、商品、文字換成你要販售的內容。
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="頁籤">
+          <div class="tab" role="tab" aria-selected="true" data-tab="products">商品列表</div>
+          <div class="tab" role="tab" aria-selected="false" data-tab="about">品牌介紹</div>
+        </div>
+
+        <div id="products" class="panel active" role="tabpanel" aria-label="商品列表">
+          <div class="grid">
+            <article class="card">
+              <div class="thumb">商品圖（放你的圖片）</div>
+              <div class="body">
+                <p class="title">特級初榨橄欖油（示例）</p>
+                <p class="sub">容量 / 風味 / 產地（示例）</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="thumb">商品圖（放你的圖片）</div>
+              <div class="body">
+                <p class="title">風味橄欖油（示例）</p>
+                <p class="sub">料理建議（示例）</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="thumb">商品圖（放你的圖片）</div>
+              <div class="body">
+                <p class="title">禮盒 / 組合（示例）</p>
+                <p class="sub">送禮情境（示例）</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div id="about" class="panel" role="tabpanel" aria-label="品牌介紹">
+          <div class="brand-card">
+            <h2 style="margin:0 0 8px; font-size:18px;">品牌介紹</h2>
+            <p style="margin:0; color:#222;">
+              你可以在這裡補上：產地、採收時間、榨油方式、獎項/認證、品油筆記、料理搭配，
+              以及你要強調的差異化（例如：鮮度、風味層次、辣感/苦感描述等）。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="brand-card">
+        <div class="brand-img">
+          品牌圖片區（把圖片 URL 放進來）
+        </div>
+        <div style="margin-top:10px; color:var(--muted); font-size:13px;">
+          小技巧：把上面灰色區塊改成 &lt;img src="..."&gt; 就行。
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div>訂閱苗林行</div>
+          <div style="margin-top:6px;">2023 © 苗林行 Miaolin Foods</div>
+        </div>
+        <div>
+          <div><a href="#">聯絡我們</a></div>
+          <div style="margin-top:6px;">hello@miaolinfoods.com.tw · 02-2658-9848</div>
+          <div style="margin-top:6px;"><a href="#">加入我們</a> · <a href="#">隱私權政策</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 簡單頁籤切換
+    const tabs = document.querySelectorAll('.tab');
+    const panels = {
+      products: document.getElementById('products'),
+      about: document.getElementById('about')
+    };
+
+    tabs.forEach(t => {
+      t.addEventListener('click', () => {
+        tabs.forEach(x => x.setAttribute('aria-selected', 'false'));
+        t.setAttribute('aria-selected', 'true');
+
+        Object.values(panels).forEach(p => p.classList.remove('active'));
+        panels[t.dataset.tab].classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
+    
+    
